@@ -18,14 +18,10 @@ public class TheEnd : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (GameEnd != null)
-            GameEnd.SetActive(true);
-        Wait();
         Application.Quit();
     }
-
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(5);
