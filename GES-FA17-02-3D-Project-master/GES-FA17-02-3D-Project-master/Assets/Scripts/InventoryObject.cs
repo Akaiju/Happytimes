@@ -14,6 +14,7 @@ public class InventoryObject : MonoBehaviour, IActivatable
     private InventoryMenu inventoryMenu;
     private Collider collider;
     private Light light;
+    private AudioSource soundsource;
 
     public string NameText
     {
@@ -31,6 +32,7 @@ public class InventoryObject : MonoBehaviour, IActivatable
         meshRenderer = GetComponent<MeshRenderer>();
         collider = GetComponent<Collider>();
         light = GetComponent<Light>();
+        soundsource = GetComponent<AudioSource>();
     }
     public void DoActivate()
     {
@@ -45,5 +47,6 @@ public class InventoryObject : MonoBehaviour, IActivatable
         meshRenderer.enabled = false;
         collider.enabled = false;
         light.enabled = false;
+        soundsource.Play();
     }
 }
