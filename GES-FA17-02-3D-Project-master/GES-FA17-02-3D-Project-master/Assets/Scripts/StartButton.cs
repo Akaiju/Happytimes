@@ -1,12 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class ClickExample : MonoBehaviour
 {
-    public void MenuStartButton()
+    public Button yourButton;
+
+    void Start()
     {
-        SceneManager.LoadScene("FirstScene");
+        Button btn = yourButton.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);
+    }
+
+    void TaskOnClick()
+    {
+        SceneManager.LoadScene(1);
     }
 }
