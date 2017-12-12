@@ -3,18 +3,17 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class ClickExample : MonoBehaviour
+public class StartButton : MonoBehaviour
 {
-    public Button yourButton;
-
     void Start()
     {
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+        //Button btn = yourButton.GetComponent<Button>();
+        //btn.onClick.AddListener(TaskOnClick);
     }
 
-    void TaskOnClick()
+    public void Task(int index)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(index);
+        Debug.Log("Scene must be loaded.");
     }
 }
